@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Vision Board</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #0d0820;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      font-family: Georgia, serif;
+    }
+
+    .page-title {
+      color: #C9A84C;
+      font-size: 22px;
+      letter-spacing: 8px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .board {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr 1fr;
+      grid-template-rows: 220px 150px 185px;
+      gap: 10px;
+      width: 100%;
+      max-width: 1100px;
+      background: #1B1033;
+      padding: 16px;
+      border-radius: 12px;
+      border: 1px solid #C9A84C44;
+    }
+
+    .tile {
+      border-radius: 8px;
+      border: 1px solid #C9A84C44;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 12px;
+    }
+
+    .tile img {
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .label {
+      color: #C9A84C;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-top: 6px;
+    }
+
+    .value {
+      color: #FFF8DC;
+      font-size: 22px;
+      font-weight: bold;
+      margin-top: 2px;
+    }
+
+    .verse {
+      color: #FFF8DC;
+      font-size: 9px;
+      font-style: italic;
+      line-height: 1.7;
+      margin-top: 6px;
+    }
+
+    .verse-ref {
+      color: #C9A84C88;
+      font-size: 8px;
+      margin-top: 4px;
+    }
+
+    .sub {
+      color: #FFF8DC55;
+      font-size: 8px;
+      font-style: italic;
+      margin-top: 3px;
+    }
+
+    .tile-fitness { background: #8B0000; }
+
+    .tile-christ {
+      background: linear-gradient(160deg, #2C1810, #1a0e05);
+      border: 2px solid #C9A84C;
+      box-shadow: 0 0 32px #C9A84C44;
+      grid-row: 1 / 3;
+      padding: 0;
+      justify-content: flex-start;
+    }
+
+    .tile-christ .christ-text {
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .tile-english { background: #1B4B43; }
+    .tile-prayer  { background: #702963; }
+    .tile-home    { background: #2C2C54; padding: 0; justify-content: flex-start; }
+    .tile-code    { background: #1B4B43; }
+    .tile-wife    { background: #702963; }
+    .tile-japan   { background: #8B0000; padding: 0; justify-content: flex-start; }
+
+    .icon { font-size: 30px; }
+
+    /* ── Mobile ── */
+    @media (max-width: 700px) {
+      body {
+        padding: 12px;
+        justify-content: flex-start;
+      }
+
+      .page-title {
+        font-size: 16px;
+        letter-spacing: 4px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+
+      .board {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        gap: 8px;
+        padding: 10px;
+      }
+
+      /* Christ goes full width at the top */
+      .tile-christ {
+        grid-column: 1 / -1;
+        grid-row: auto;
+        order: -1;
+      }
+
+      .tile-christ img {
+        height: 200px !important;
+      }
+
+      /* All other image tiles get a comfortable mobile height */
+      .tile-fitness img,
+      .tile-japan img {
+        height: 90px !important;
+      }
+
+      .tile-home img {
+        height: 80px !important;
+      }
+
+      .tile-code img {
+        height: 55px !important;
+        width: 55px !important;
+      }
+
+      .tile-wife img {
+        height: 40px !important;
+        width: 40px !important;
+      }
+
+      .tile-english img {
+        height: 36px !important;
+      }
+
+      .value {
+        font-size: 18px;
+      }
+
+      .label {
+        font-size: 9px;
+      }
+
+      .verse {
+        font-size: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-title">My Vision Board</div>
+
+  <div class="board">
+
+    <!-- Tile 1: Fitness -->
+    <div class="tile tile-fitness">
+      <img src="../Downloads/TwoDumbbells.JPG" style="height:130px;">
+      <div class="label">Gym Goal</div>
+      <div class="value">145 lbs</div>
+    </div>
+
+    <!-- Tile 2: Christ — center, spans rows 1 + 2 -->
+    <div class="tile tile-christ">
+      <img src="../Downloads/Jesus-Christ-from-Hagia-Sophia.jpg" style="height:245px;border-radius:6px 6px 0 0;">
+      <div class="christ-text">
+        <div class="label" style="letter-spacing:3px;">Christos Pantokrator</div>
+        <div class="verse" style="font-size:9.5px;">
+          "Trust in the Lord with all your heart<br>
+          and lean not on your own understanding;<br>
+          in all your ways submit to him,<br>
+          and he will make your paths straight."
+        </div>
+        <div class="verse-ref">Proverbs 3:5–6</div>
+      </div>
+    </div>
+
+    <!-- Tile 3: Teach English / Income -->
+    <div class="tile tile-english">
+      <img src="../Downloads/Italki_logo_2025_red_background.svg" style="height:48px;object-fit:contain;">
+      <div class="label" style="margin-top:10px;">Teach English</div>
+      <div class="value" style="font-size:26px;">$1,500<span style="font-size:13px;">/mo</span></div>
+      <div class="sub">If the Lord wills</div>
+    </div>
+
+    <!-- Tile 4: Home Prayer Corner -->
+    <div class="tile tile-prayer">
+      <div class="icon">🕯</div>
+      <div class="label" style="margin-top:10px;">Home Prayer</div>
+      <div class="label">Corner</div>
+    </div>
+
+    <!-- Tile 5: My Own Home -->
+    <div class="tile tile-home">
+      <img src="newhome.webp" style="height:100px;border-radius:8px 8px 0 0;">
+      <div style="padding:8px;">
+        <div class="label">My Own Home</div>
+        <div class="sub">2026</div>
+      </div>
+    </div>
+
+    <!-- Tile 6: UX/UI Design -->
+    <div class="tile tile-code">
+      <img src="../Downloads/Codementor_CIS.png" style="height:70px;width:70px;object-fit:contain;border-radius:6px;">
+      <div class="label" style="margin-top:8px;">UX/UI Design</div>
+      <div class="value" style="font-size:22px;">$3,500<span style="font-size:11px;">/mo</span></div>
+      <div class="verse" style="font-size:9px;margin-top:4px;">"Live in the Present"</div>
+    </div>
+
+    <!-- Tile 7: Faithful Wife & Family -->
+    <div class="tile tile-wife">
+      <img src="../Downloads/Marriage_symbol.svg" style="height:50px;width:50px;object-fit:contain;filter:brightness(0) invert(1) sepia(1) saturate(4) hue-rotate(5deg);">
+      <div class="label" style="margin-top:8px;">A Faithful Wife · Family</div>
+      <div class="verse">
+        "He who finds a wife finds a good thing,<br>
+        and obtains favor from the Lord."
+      </div>
+      <div class="verse-ref">Proverbs 18:22</div>
+    </div>
+
+    <!-- Tile 8: Japan -->
+    <div class="tile tile-japan">
+      <img src="japan.jpeg" style="height:130px;border-radius:8px 8px 0 0;">
+      <div style="padding:8px;">
+        <div class="label">Japan</div>
+        <div class="sub">Travel Goal</div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
