@@ -29,7 +29,7 @@
     .board {
       display: grid;
       grid-template-columns: 1fr 1.6fr 1fr;
-      grid-template-rows: 220px 150px 185px;
+      grid-template-rows: 220px 150px 185px 150px;
       gap: 10px;
       width: 100%;
       max-width: 1100px;
@@ -116,6 +116,7 @@
     .tile-code    { background: #1B4B43; }
     .tile-wife    { background: #702963; }
     .tile-japan   { background: #8B0000; padding: 0; justify-content: flex-start; }
+    .tile-greek   { background: #1A4A8A; }
 
     .icon { font-size: 55px; }
 
@@ -173,6 +174,12 @@
 
       .tile-english img {
         height: 36px !important;
+      }
+
+      .tile-greek img {
+        height: 80px !important;
+        width: auto !important;
+        object-fit: contain !important;
       }
 
       .value {
@@ -267,6 +274,13 @@
         <div class="label">Japan</div>
         <div class="sub">Travel Goal</div>
       </div>
+    </div>
+
+    <!-- Tile 9: Fluent in Greek -->
+    <div class="tile tile-greek" style="grid-column: 1 / -1;">
+      <img src="images.jpeg" style="height:100px;object-fit:contain;">
+      <div class="label" style="margin-top:8px;">Fluent in Greek</div>
+      <div class="sub">Language Goal</div>
     </div>
 
   </div>
